@@ -2,10 +2,10 @@ package euler.problem3;
 
 import euler.IEulerProblem;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static euler.util.PrimeUtils.generatePrimes;
 
 public class Problem3 implements IEulerProblem {
     @Override
@@ -23,33 +23,6 @@ public class Problem3 implements IEulerProblem {
     List<Integer> primeFactors(long n) {
         List<Integer> primes = generatePrimes((int) (Math.sqrt(n) + 1));
         return primes.stream().filter(prime -> n % prime == 0).collect(Collectors.toList());
-    }
-
-
-    /**
-     * Generates a list of primes in the range 2..n
-     * by the method of SieveOfEratosthenes
-     *
-     * @param n highest possible prime in list
-     * @return List of primes
-     */
-    List<Integer> generatePrimes(int n) {
-        boolean[] primes = new boolean[n + 1];
-        Arrays.fill(primes, Boolean.TRUE);
-        for (int p = 2; p * p <= n; p++) {
-            if (primes[p]) {
-                for (int i = p * p; i <= n; i += p) {
-                    primes[i] = false;
-                }
-            }
-        }
-        List<Integer> primeList = new ArrayList<>();
-        for (int a = 2; a <= n; a++) {
-            if (primes[a]) {
-                primeList.add(a);
-            }
-        }
-        return primeList;
     }
 
 
