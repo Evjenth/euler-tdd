@@ -3,6 +3,7 @@ package euler;
 import euler.problem1.Problem1;
 import euler.problem2.Problem2;
 import euler.problem3.Problem3;
+import euler.problem4.Problem4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class Runner {
         problems.add(new Problem1());
         problems.add(new Problem2());
         problems.add(new Problem3());
+        problems.add(new Problem4());
 
         problems.forEach((problem) -> {
             System.out.println("");
