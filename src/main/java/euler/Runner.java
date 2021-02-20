@@ -5,6 +5,7 @@ import euler.problem2.Problem2;
 import euler.problem3.Problem3;
 import euler.problem4.Problem4;
 import euler.problem5.Problem5;
+import euler.problem6.Problem6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Runner {
         problems.add(new Problem3());
         problems.add(new Problem4());
         problems.add(new Problem5());
+        problems.add(new Problem6());
 
         problems.forEach((problem) -> {
             System.out.println("");

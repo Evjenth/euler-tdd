@@ -2,6 +2,8 @@ package euler.problem4;
 
 import euler.IEulerProblem;
 
+import java.util.stream.IntStream;
+
 public class Problem4 implements IEulerProblem {
     @Override
     public void run() {
@@ -15,18 +17,15 @@ public class Problem4 implements IEulerProblem {
      * @return largest palindrome found
      */
     int findLargestPalindromeByProducts(int digits) {
-        int largestPalindrome = Integer.MIN_VALUE;
-        int lowerBound = (int) Math.pow(10, digits - 1);
-        int upperBound = (int) Math.pow(10, digits);
-        for (int n1 = lowerBound; n1 < upperBound; n1++) {
-            for (int n2 = n1; n2 < upperBound; n2++) {
-                int product = n1 * n2;
-                if (isPalindrome(product) && product > largestPalindrome) {
-                    largestPalindrome = product;
-                }
-            }
-        }
-        return largestPalindrome;
+        final int lowerBound = (int) Math.pow(10, digits - 1);
+        final int upperBound = (int) Math.pow(10, digits);
+        return IntStream.range(lowerBound, upperBound)
+                .map(n1 -> IntStream.range(n1, upperBound).map(n2 -> {
+                    int product = n1 * n2;
+                    return isPalindrome(product) ? product : 0;
+                }).max().orElse(0))
+                .max().orElse(0);
+
     }
 
     /**

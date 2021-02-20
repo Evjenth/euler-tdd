@@ -1,12 +1,15 @@
 package euler.problem4;
 
+import euler.IEulerProblem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class Problem4Test {
@@ -37,5 +40,11 @@ class Problem4Test {
         largestPalindrome = problem4.findLargestPalindromeByProducts(3);
         assertThat(largestPalindrome, is(906609));
 
+    }
+
+    @Test
+    void testRunTimeTake() {
+        IEulerProblem iEulerProblem = problem4;
+        assertTimeout(Duration.ofMillis(100), iEulerProblem::run);
     }
 }

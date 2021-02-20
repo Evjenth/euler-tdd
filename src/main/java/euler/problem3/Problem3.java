@@ -2,6 +2,7 @@ package euler.problem3;
 
 import euler.IEulerProblem;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +15,7 @@ public class Problem3 implements IEulerProblem {
         System.out.println(result.get(result.size() - 1));
     }
 
+
     /**
      * Finds all prime factors of number n by checking if any prime up to sqrt(n) can divide n
      *
@@ -21,8 +23,7 @@ public class Problem3 implements IEulerProblem {
      * @return list of prime factors
      */
     List<Integer> primeFactors(long n) {
-        List<Integer> primes = generatePrimes((int) (Math.sqrt(n) + 1));
-        return primes.stream().filter(prime -> n % prime == 0).collect(Collectors.toList());
+        return generatePrimes((int) (Math.sqrt(n) + 1)).stream().filter(prime -> n % prime == 0).collect(Collectors.toList());
     }
 
 

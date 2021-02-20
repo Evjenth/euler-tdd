@@ -1,11 +1,12 @@
 package euler.problem3;
 
+import euler.IEulerProblem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.util.List;
 
-import static java.time.Duration.ofMillis;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
@@ -31,6 +32,12 @@ class Problem3Test {
         Integer[] expected = {5, 7, 13, 29};
 
         assertThat(primeFactors, contains(expected));
+    }
+
+    @Test
+    void testRunTimeTake() {
+        IEulerProblem iEulerProblem = problem3;
+        assertTimeout(Duration.ofMillis(50), iEulerProblem::run);
     }
 
 

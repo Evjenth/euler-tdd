@@ -3,7 +3,6 @@ package euler.problem5;
 import euler.IEulerProblem;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static euler.util.PrimeUtils.generatePrimes;
@@ -21,14 +20,8 @@ public class Problem5 implements IEulerProblem {
      * @return smallest number dividing all numbers in range 1..n
      */
     int smallestNumberDivisibleByAllUpto(int n) {
-        if (n == 2) {
-            return 2;
-        } else if (n == 3) {
-            return 6;
-        }
         List<List<Integer>> primeFactorLists = new ArrayList<>();
         List<Integer> primes = generatePrimes(n);
-        System.out.println(primes);
         for (int a = 2; a <= n; a++) {
             List<Integer> factors = new ArrayList<>();
             if (primes.contains(a)) {
@@ -37,7 +30,6 @@ public class Problem5 implements IEulerProblem {
                 int copy = a;
                 while (copy != 1) {
                     int finalCopy = copy;
-                    System.out.println(finalCopy);
                     Integer factor = primes.stream().filter(prime -> finalCopy >= prime && finalCopy % prime == 0).findFirst().orElse(null);
                     if (factor != null) {
                         copy /= factor;
@@ -60,7 +52,6 @@ public class Problem5 implements IEulerProblem {
         }
 
         int product = 1;
-        System.out.println(Arrays.toString(resArr));
         for (int a = 0; a < resArr.length; a++) {
 
             if (resArr[a] != 0) {
@@ -70,8 +61,6 @@ public class Problem5 implements IEulerProblem {
 
             }
         }
-
-
         return product;
     }
 

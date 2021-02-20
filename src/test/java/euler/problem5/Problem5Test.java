@@ -1,7 +1,10 @@
 package euler.problem5;
 
+import euler.IEulerProblem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.time.Duration;
 
 import static java.time.Duration.ofMillis;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -39,6 +42,12 @@ class Problem5Test {
         assertTimeout(ofMillis(50), () -> {
             problem5.smallestNumberDivisibleByAllUpto(2);
         });
+    }
+
+    @Test
+    void testRunTimeTake() {
+        IEulerProblem iEulerProblem = problem5;
+        assertTimeout(Duration.ofMillis(5), iEulerProblem::run);
     }
 
 }
