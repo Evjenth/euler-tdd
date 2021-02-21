@@ -2,17 +2,24 @@ package euler.problem3;
 
 import euler.IEulerProblem;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static euler.util.PrimeUtils.generatePrimes;
 
 public class Problem3 implements IEulerProblem {
+
+    int result;
+
     @Override
     public void run() {
-        List<Integer> result = primeFactors(600_851_475_143L);
-        System.out.println(result.get(result.size() - 1));
+        List<Integer> list = primeFactors(600_851_475_143L);
+        result = list.size() - 1;
+    }
+
+    @Override
+    public void printResult() {
+        System.out.println(result);
     }
 
 

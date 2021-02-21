@@ -6,9 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Problem2 implements IEulerProblem {
+    int result;
+
     @Override
     public void run() {
-        int result = sumEvenNumbers(fibonacciSequence(4_000_000));
+        result = sumEvenNumbers(fibonacciSequence(4_000_000));
+    }
+
+    @Override
+    public void printResult() {
         System.out.println(result);
     }
 

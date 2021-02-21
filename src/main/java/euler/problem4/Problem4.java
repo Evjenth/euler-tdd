@@ -5,9 +5,17 @@ import euler.IEulerProblem;
 import java.util.stream.IntStream;
 
 public class Problem4 implements IEulerProblem {
+
+    int result;
+
     @Override
     public void run() {
-        System.out.println(findLargestPalindromeByProducts(3));
+        result = findLargestPalindromeByProducts(3);
+    }
+
+    @Override
+    public void printResult() {
+        System.out.println(result);
     }
 
     /**

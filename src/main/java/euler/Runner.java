@@ -28,13 +28,14 @@ public class Runner {
         problems.add(new Problem7());
         problems.add(new Problem8());
 
-        problems.forEach((problem) -> {
-            System.out.println("");
+        problems.parallelStream().forEach(IEulerProblem::run);
+        problems.forEach(problem -> {
+            System.out.println();
             System.out.println(LINE_SEPERATOR);
             System.out.println("Starting " + problem.getClass().getSimpleName());
             System.out.println("Result:");
             long start = System.currentTimeMillis();
-            problem.run();
+            problem.printResult();
             long end = System.currentTimeMillis();
             System.out.println("problem took " + (end - start) + "ms to calculate");
             System.out.println(LINE_SEPERATOR);

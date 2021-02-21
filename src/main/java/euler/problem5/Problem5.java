@@ -8,9 +8,17 @@ import java.util.List;
 import static euler.util.PrimeUtils.generatePrimes;
 
 public class Problem5 implements IEulerProblem {
+    int result;
+
     @Override
     public void run() {
-        System.out.println(smallestNumberDivisibleByAllUpto(20));
+        result = smallestNumberDivisibleByAllUpto(20);
+
+    }
+
+    @Override
+    public void printResult() {
+        System.out.println(result);
     }
 
     /**

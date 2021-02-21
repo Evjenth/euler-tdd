@@ -5,9 +5,17 @@ import euler.IEulerProblem;
 import java.util.stream.IntStream;
 
 public class Problem6 implements IEulerProblem {
+    int result;
+
     @Override
     public void run() {
-        System.out.println(sumSquareDifference(100));
+        result = sumSquareDifference(100);
+
+    }
+
+    @Override
+    public void printResult() {
+        System.out.println(result);
     }
 
     int sumSquares(int n) {

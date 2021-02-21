@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class Problem1 implements IEulerProblem {
 
     Integer[] multiples;
+    int result;
 
     public Problem1() {
         // classic fizzbuzz
@@ -22,7 +23,11 @@ public class Problem1 implements IEulerProblem {
 
     @Override
     public void run() {
-        int result = sumMultiples(1000);
+        sumMultiples(1000);
+    }
+
+    @Override
+    public void printResult() {
         System.out.println(result);
     }
 

@@ -6,8 +6,16 @@ import static euler.util.PrimeUtils.nThPrime;
 
 public class Problem7 implements IEulerProblem {
 
+    int result;
+
     @Override
     public void run() {
-        System.out.println(nThPrime(10_001));
+        result = nThPrime(10_001);
+
+    }
+
+    @Override
+    public void printResult() {
+        System.out.println(result);
     }
 }

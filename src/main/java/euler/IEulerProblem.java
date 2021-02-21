@@ -1,6 +1,8 @@
 package euler;
 
 public interface IEulerProblem {
-    public void run();
+    void run();
+
+    void printResult();
 
 }
