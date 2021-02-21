@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 public class RunnerTest {
 
-    public static int MAX_RUN_TIME_MILLIS = 500;
-    public static int SINGLE_PROBLEM_MAX_RUN_TIME = 300;
+    public static int MAX_RUN_TIME_MILLIS = 1000;
+    public static int SINGLE_PROBLEM_MAX_RUN_TIME = 800;
 
     @Test
     void main() {
