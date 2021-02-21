@@ -35,7 +35,7 @@ class Problem1Test {
     @Test
     void testRunTimeTake() {
         IEulerProblem iEulerProblem = problem1;
-        assertTimeout(Duration.ofMillis(5), iEulerProblem::run);
+        assertTimeout(Duration.ofMillis(50), iEulerProblem::run);
     }
 
     @Test

@@ -12,6 +12,6 @@ class Problem7Test {
     @Test
     void runTestTime() {
         IEulerProblem iEulerProblem = new Problem7();
-        assertTimeout(Duration.ofMillis(50), iEulerProblem::run);
+        assertTimeout(Duration.ofMillis(100), iEulerProblem::run);
     }
 }
