@@ -8,6 +8,7 @@ import euler.problem5.Problem5;
 import euler.problem6.Problem6;
 import euler.problem7.Problem7;
 import euler.problem8.Problem8;
+import euler.problem9.Problem9;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,17 +28,14 @@ public class Runner {
         problems.add(new Problem6());
         problems.add(new Problem7());
         problems.add(new Problem8());
+        problems.add(new Problem9());
 
         problems.parallelStream().forEach(IEulerProblem::run);
         problems.forEach(problem -> {
             System.out.println();
             System.out.println(LINE_SEPERATOR);
-            System.out.println("Starting " + problem.getClass().getSimpleName());
-            System.out.println("Result:");
-            long start = System.currentTimeMillis();
+            System.out.println("SOLUTION TO " + (problem.getClass().getSimpleName().toUpperCase()) + ":");
             problem.printResult();
-            long end = System.currentTimeMillis();
-            System.out.println("problem took " + (end - start) + "ms to calculate");
             System.out.println(LINE_SEPERATOR);
         });
     }

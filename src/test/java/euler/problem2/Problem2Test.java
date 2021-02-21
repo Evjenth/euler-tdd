@@ -8,6 +8,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import static euler.RunnerTest.SINGLE_PROBLEM_MAX_RUN_TIME;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
@@ -47,6 +48,6 @@ class Problem2Test {
     @Test
     void testRunTimeTake() {
         IEulerProblem iEulerProblem = problem2;
-        assertTimeout(Duration.ofMillis(5), iEulerProblem::run);
+        assertTimeout(Duration.ofMillis(SINGLE_PROBLEM_MAX_RUN_TIME), iEulerProblem::run);
     }
 }

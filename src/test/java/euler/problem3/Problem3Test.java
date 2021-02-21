@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.util.List;
 
+import static euler.RunnerTest.SINGLE_PROBLEM_MAX_RUN_TIME;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
@@ -37,7 +38,7 @@ class Problem3Test {
     @Test
     void testRunTimeTake() {
         IEulerProblem iEulerProblem = problem3;
-        assertTimeout(Duration.ofMillis(50), iEulerProblem::run);
+        assertTimeout(Duration.ofMillis(SINGLE_PROBLEM_MAX_RUN_TIME), iEulerProblem::run);
     }
 
 

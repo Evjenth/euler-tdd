@@ -6,14 +6,15 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 
-class RunnerTest {
+public class RunnerTest {
 
-    // TODO: setup global times. Maybe each test should be enforced to run in under maxTime/2?
+    public static int MAX_RUN_TIME_MILLIS = 500;
+    public static int SINGLE_PROBLEM_MAX_RUN_TIME = 300;
 
     @Test
     void main() {
         // This may need to be changed in the future when a lot of problems are calculated concurrently,
         // Even when problems are solved in concurrently, due to CPU/memory limitations
-        assertTimeout(Duration.ofMillis(250), () -> Runner.main(null));
+        assertTimeout(Duration.ofMillis(MAX_RUN_TIME_MILLIS), () -> Runner.main(null));
     }
 }

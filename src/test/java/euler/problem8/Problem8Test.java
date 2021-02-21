@@ -8,6 +8,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import java.time.Duration;
 
+import static euler.RunnerTest.MAX_RUN_TIME_MILLIS;
+import static euler.RunnerTest.SINGLE_PROBLEM_MAX_RUN_TIME;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
@@ -24,7 +26,7 @@ class Problem8Test {
     @Test
     void run() {
         IEulerProblem iEulerProblem = problem8;
-        assertTimeout(Duration.ofMillis(50), iEulerProblem::run);
+        assertTimeout(Duration.ofMillis(SINGLE_PROBLEM_MAX_RUN_TIME), iEulerProblem::run);
     }
 
     @ParameterizedTest

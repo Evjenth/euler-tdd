@@ -31,7 +31,7 @@ class PrimeUtilsTest {
      */
     @Test
     void generatePrime_isFast() {
-        assertTimeout(ofMillis(50), () -> {
+        assertTimeout(ofMillis(100), () -> {
             generatePrimes(1_000_000);
         });
     }

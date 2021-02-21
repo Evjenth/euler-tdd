@@ -14,7 +14,7 @@ public class Problem3 implements IEulerProblem {
     @Override
     public void run() {
         List<Integer> list = primeFactors(600_851_475_143L);
-        result = list.size() - 1;
+        result = list.get(list.size() - 1);
     }
 
     @Override

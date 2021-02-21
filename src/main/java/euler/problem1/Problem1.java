@@ -23,7 +23,7 @@ public class Problem1 implements IEulerProblem {
 
     @Override
     public void run() {
-        sumMultiples(1000);
+        result = sumMultiples(1000);
     }
 
     @Override

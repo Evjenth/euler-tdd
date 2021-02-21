@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 
+import static euler.RunnerTest.SINGLE_PROBLEM_MAX_RUN_TIME;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Problem1Test {
@@ -35,13 +36,11 @@ class Problem1Test {
     @Test
     void testRunTimeTake() {
         IEulerProblem iEulerProblem = problem1;
-        assertTimeout(Duration.ofMillis(50), iEulerProblem::run);
+        assertTimeout(Duration.ofMillis(SINGLE_PROBLEM_MAX_RUN_TIME), iEulerProblem::run);
     }
 
     @Test
-    void assertThrowsOnNull(){
-        assertThrows(IllegalArgumentException.class, () -> {
-           new Problem1((Integer[]) null);
-        });
+    void assertThrowsOnNull() {
+        assertThrows(IllegalArgumentException.class, () -> new Problem1((Integer[]) null));
     }
 }
