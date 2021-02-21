@@ -41,7 +41,7 @@ class Problem1Test {
     @Test
     void assertThrowsOnNull(){
         assertThrows(IllegalArgumentException.class, () -> {
-           Problem1 problem1 = new Problem1((Integer[]) null);
+           new Problem1((Integer[]) null);
         });
     }
 }

@@ -32,4 +32,44 @@ public class PrimeUtils {
         return primeList;
     }
 
+    /**
+     * Finds the nTh prime.
+     *
+     * @param n index of prime in series. 1 returns first prime (2), 4 returns 7 and so on
+     * @return nth prime starting from 2 as the first prime.
+     */
+    public static int nThPrime(int n) {
+        List<Integer> primes = generatePrimes(1000_000);
+
+        if (primes.size() >= n) {
+            return primes.get(n - 1);
+        }
+
+        // Continue from last prime and continue to add to list
+        int nextNumberToCheck = primes.get(primes.size() - 1) + 2;
+        while (primes.size() < n) {
+            boolean isPrime = true;
+            for (int prime : primes) {
+                if (prime * prime > nextNumberToCheck) {
+                    break;
+                }
+
+                if (nextNumberToCheck % prime == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                primes.add(nextNumberToCheck);
+            }
+
+            nextNumberToCheck += 2;
+        }
+
+        return primes.get(n - 1);
+
+    }
+
+
 }
