@@ -3,6 +3,7 @@ package euler;
 import euler.problem1.Problem1;
 import euler.problem10.Problem10;
 import euler.problem11.Problem11;
+import euler.problem12.Problem12;
 import euler.problem2.Problem2;
 import euler.problem3.Problem3;
 import euler.problem4.Problem4;
@@ -33,6 +34,7 @@ public class Runner {
         problems.add(new Problem9());
         problems.add(new Problem10());
         problems.add(new Problem11());
+        problems.add(new Problem12());
 
         problems.parallelStream().forEach(IEulerProblem::run);
         problems.forEach(problem -> {
